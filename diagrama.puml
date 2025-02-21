@@ -1,0 +1,57 @@
+@startuml DiagramaferiaEmpresarial
+
+class Empresa {
+    - String nombre
+    - String sector
+    - String correo
+    + Empresa(String, String, String)
+    + toString(): String
+}
+
+class Stand {
+    - int numero
+    - String ubicacion
+    - String tamano
+    + Stand(int, String, String)
+    + toString(): String
+}
+
+class Visitante {
+    - String nombre
+    - String identificacion
+    - String correo
+    + Visitante(String, String, String)
+    + toString(): String
+}
+
+class Comentario {
+    - String visitante
+    - int calificacion
+    - String mensaje
+    + Comentario(String, int, String)
+    + toString(): String
+}
+
+class FeriaService {
+    - List<Empresa> empresas
+    - List<Stand> stands
+    - List<Visitante> visitantes
+    - List<Comentario> comentarios
+    + registrarEmpresa(Empresa)
+    + listarEmpresas()
+    + registrarStand(Stand)
+    + listarStands()
+    + registrarVisitante(Visitante)
+    + listarVisitantes()
+    + agregarComentario(Comentario)
+    + listarComentarios()
+}
+
+Empresa "1" -- "*" Stand
+Visitante "*" -- "1" Comentario
+FeriaService "1" -- "*" Empresa
+FeriaService "1" -- "*" Stand
+FeriaService "1" -- "*" Visitante
+FeriaService "1" -- "*" Comentario
+
+@enduml
