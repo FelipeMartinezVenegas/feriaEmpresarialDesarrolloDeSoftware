@@ -73,6 +73,10 @@ Visitantes registrados y los stands que han visitado.
 
 Calificaciones y comentarios sobre cada stand.
 
+📝 Diagrama UML
+El siguiente diagrama muestra la estructura y relaciones entre las clases del sistema de gestión de la feria empresarial:
+para poder visualizar el uml, una vez hallas clonado el repositorio dirigirte a las carpeta out y ver la imagen en formato png, o puedes dirigirte al archivo llamado diagrama.puml e ingresar el comando ALT + D
+
 🌐 Repositorio y Control de Versiones
 
 Este proyecto está alojado en GitHub y se recomienda trabajar con branches para nuevas funcionalidades.
