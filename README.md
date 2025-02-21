@@ -81,7 +81,7 @@ Comandos útiles:
 
 git add .
 git commit -m "Descripción del cambio"
-git push origin main
+git pull origin main
 
 🌟 Autor
 
