@@ -1,21 +1,37 @@
 package models;
-import java.util.Date;
 
 public class Comentario {
-    private String visitante;
-    private String comentario;
+    private Visitante visitante;
+    private Stand stand;
     private int calificacion;
-    private Date fecha;
+    private String mensaje;
 
-    public Comentario(String visitante, String comentario, int calificacion) {
+    public Comentario(Visitante visitante, Stand stand, int calificacion, String mensaje) {
         this.visitante = visitante;
-        this.comentario = comentario;
+        this.stand = stand;
         this.calificacion = calificacion;
-        this.fecha = new Date();
+        this.mensaje = mensaje;
+    }
+
+    public Visitante getVisitante() {
+        return visitante;
+    }
+
+    public Stand getStand() {
+        return stand;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public String getMensaje() {
+        return mensaje;
     }
 
     @Override
     public String toString() {
-        return "Comentario de " + visitante + " (" + fecha + "): " + comentario + " | 🌟 " + calificacion + "/5";
+        return "📝 " + visitante.getNombre() + " calificó el Stand " + stand.getNumero() +
+               " con " + calificacion + " estrellas: " + mensaje;
     }
 }
