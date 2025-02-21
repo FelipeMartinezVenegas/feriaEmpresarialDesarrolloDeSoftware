@@ -1,0 +1,5 @@
+# Ignorar archivos CSV
+*.csv
+
+# Ignorar carpeta bin
+bin/
