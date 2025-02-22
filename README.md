@@ -87,9 +87,9 @@ git add .
 git commit -m "Descripción del cambio"
 git pull origin main
 
-🌟 Autor
+🌟 Colaboradores
 
-Felipe Martínez Venegas - GitHub
+Felipe Martínez Venegas, Miguel Antonio Moscote, Mariana Ruiz, Jorge Steven Gaitan  - GitHub
 
 💪¡Gracias por visitar el proyecto! 🚀
 
