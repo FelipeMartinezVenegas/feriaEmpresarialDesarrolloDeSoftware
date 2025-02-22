@@ -15,6 +15,7 @@ public class FeriaService {
     // Métodos para gestionar empresas
     public void registrarEmpresa(Empresa empresa) {
         empresas.add(empresa);
+        guardarEmpresasEnArchivo();
     }
 
     public void listarEmpresas() {
@@ -26,6 +27,7 @@ public class FeriaService {
     // Métodos para gestionar stands
     public void registrarStand(Stand stand) {
         stands.add(stand);
+        guardarStandsEnArchivo();
     }
 
     public void listarStands() {
@@ -37,6 +39,7 @@ public class FeriaService {
     // Métodos para gestionar visitantes
     public void registrarVisitante(Visitante visitante) {
         visitantes.add(visitante);
+        guardarVisitantesEnArchivo();
     }
 
     public void listarVisitantes() {
@@ -58,6 +61,39 @@ public class FeriaService {
             for (Comentario c : comentarios) {
                 System.out.println(c);
             }
+        }
+    }
+
+    // Guardar empresas en un archivo CSV
+    private void guardarEmpresasEnArchivo() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("empresas.csv"))) {
+            for (Empresa e : empresas) {
+                writer.println(e.getNombre());
+            }
+        } catch (IOException e) {
+            System.out.println("Error al guardar empresas: " + e.getMessage());
+        }
+    }
+
+    // Guardar stands en un archivo CSV
+    private void guardarStandsEnArchivo() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("stands.csv"))) {
+            for (Stand s : stands) {
+                writer.println(s.getNumero());
+            }
+        } catch (IOException e) {
+            System.out.println("Error al guardar stands: " + e.getMessage());
+        }
+    }
+
+    // Guardar visitantes en un archivo CSV
+    private void guardarVisitantesEnArchivo() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("visitantes.csv"))) {
+            for (Visitante v : visitantes) {
+                writer.println(v.getNombre());
+            }
+        } catch (IOException e) {
+            System.out.println("Error al guardar visitantes: " + e.getMessage());
         }
     }
 
